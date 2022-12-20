@@ -1,23 +1,16 @@
 pipeline {
-    agent any
-    stages {
-        stage('Build') { 
-            steps {
-                echo 'Building stage' 
-            }
+  environment {
+    registry = "eisvidev/clamav_rest"
+    registryCredential = 'dockerhub'
+  }
+  agent any
+  stages {
+    stage('Building image') {
+      steps{
+        script {
+          docker.build registry + ":$BUILD_NUMBER"
         }
-                stage('Testing') { 
-            steps {
-                echo 'Testing stage' 
-                echo 'Done!'
-            }
-        }
-
-                stage('Deployment') { 
-            steps {
-                echo 'Deployment stage'
-                echo 'Done!'
-            }
-        }
+      }
     }
+  }
 }
