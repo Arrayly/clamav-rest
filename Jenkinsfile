@@ -3,7 +3,7 @@ pipeline {
     registry = "eisvidas@mail.com/clamav_rest"
     registryCredential = 'dockerhub'
   }
-  agent { dockerfile true }
+  agent any
   stages {
     stage('Building image') {
       steps{
