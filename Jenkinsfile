@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "eisvidev/clamav_rest"
+    registry = "eisvidas@mail.com/clamav_rest"
     registryCredential = 'dockerhub'
   }
   agent any
