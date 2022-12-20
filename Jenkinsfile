@@ -8,7 +8,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sh 'docker build -t eisvidas@mail.com/clamav_rest:$BUILD_NUMBER .'
+          sh 'docker build .'
         }
       }
     }
